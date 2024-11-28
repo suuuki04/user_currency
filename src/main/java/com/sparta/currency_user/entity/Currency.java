@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Getter
-public class Currency {
+public class Currency extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

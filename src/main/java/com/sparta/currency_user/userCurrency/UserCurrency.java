@@ -1,5 +1,6 @@
 package com.sparta.currency_user.userCurrency;
 
+import com.sparta.currency_user.entity.BaseEntity;
 import com.sparta.currency_user.entity.Currency;
 import com.sparta.currency_user.entity.User;
 import jakarta.persistence.*;
@@ -9,7 +10,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Getter
-public class UserCurrency {
+public class UserCurrency extends BaseEntity {
     //환전 요청 고유 식별자
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
