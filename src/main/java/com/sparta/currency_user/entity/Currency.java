@@ -27,6 +27,6 @@ public class Currency extends BaseEntity {
     public Currency() {}
 
     @OneToMany
-    @JoinColumn(name = "toCurrencyId")
+    @JoinColumn(name = "to_currency_id")
     List<UserCurrency> userCurrencyList;
 }

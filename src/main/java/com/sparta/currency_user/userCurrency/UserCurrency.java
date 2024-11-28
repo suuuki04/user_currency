@@ -36,11 +36,11 @@ public class UserCurrency extends BaseEntity {
 
     //고객 고유 식별자
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     User user;
 
     //환전 대상 통화 식별자
     @ManyToOne
-    @JoinColumn(name = "toCurrencyId")
+    @JoinColumn(name = "to_currency_id")
     Currency currency;
 }
