@@ -1,12 +1,11 @@
 package com.sparta.currency_user.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.sparta.currency_user.userCurrency.UserCurrency;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Getter
@@ -26,4 +25,8 @@ public class Currency {
     }
 
     public Currency() {}
+
+    @OneToMany
+    @JoinColumn(name = "toCurrencyId")
+    List<UserCurrency> userCurrencyList;
 }
