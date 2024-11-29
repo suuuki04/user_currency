@@ -1,6 +1,5 @@
 package com.sparta.currency_user.entity;
 
-import com.sparta.currency_user.userCurrency.UserCurrency;
 import jakarta.persistence.*;
 import lombok.Getter;
 
@@ -28,5 +27,5 @@ public class Currency extends BaseEntity {
 
     @OneToMany
     @JoinColumn(name = "to_currency_id")
-    List<UserCurrency> userCurrencyList;
+    List<Exchange> exchangeList;
 }
