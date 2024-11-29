@@ -134,4 +134,4 @@
 정상적으로 삭제되었습니다.
 
 # **ERD**
-![](/Users/t2023-m0072/Desktop/스크린샷 2024-11-29 오후 8.09.32.png)
+![image](https://github.com/user-attachments/assets/3c7604ba-f8b4-42f3-90d8-8d3bf833f854)
