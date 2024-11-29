@@ -71,4 +71,25 @@ public class ExchangeService {
                 .collect(Collectors.toList());
     }
 
+    //환전 상태 취소로 변경
+    @Transactional
+
+    public ExchangeResponseDto cancelExchange(Long id) {
+        Exchange exchange = exchangRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 환전 기록을 찾을 수 없습니다."));
+
+        // 상태가 "normal"일 경우에만 변경
+        if ("normal".equals(exchange.getStatus())) {
+            exchange.setStatus("cancelled"); // 상태 변경
+        } else {
+            throw new IllegalArgumentException("이미 취소된 상태입니다.");
+        }
+
+        // 변경된 환전 기록을 ExchangeResponseDto로 변환하여 반환
+        return new ExchangeResponseDto(
+                exchange.getId(),
+                exchange.getAmountAfterExchange(),
+                exchange.getStatus()
+        );
+    }
 }

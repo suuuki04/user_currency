@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 
 @Entity
 @Getter
+@Setter
 public class Exchange extends BaseEntity {
     //환전 요청 고유 식별자
     @Id

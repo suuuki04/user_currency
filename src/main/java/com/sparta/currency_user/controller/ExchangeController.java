@@ -31,4 +31,10 @@ public class ExchangeController {
         return new ResponseEntity<>(exchangeResponseDtos, HttpStatus.OK);
     }
 
+    //U:환전 요청 상태를 취소로 변경
+    @PutMapping("/{id}")
+    public ResponseEntity<ExchangeResponseDto> cancelExchange(@PathVariable Long id) {
+        ExchangeResponseDto responseDto = exchangeService.cancelExchange(id);
+        return new ResponseEntity<>(responseDto, HttpStatus.OK);
+    }
 }
