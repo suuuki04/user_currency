@@ -8,4 +8,8 @@ import java.util.List;
 public interface ExchangRepository extends JpaRepository<Exchange, Long> {
 
     List<Exchange> findByUserId(Long userId);
+
+    //고객 삭제
+    void deleteByUserId(Long userId);
+
 }

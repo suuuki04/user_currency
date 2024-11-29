@@ -92,4 +92,11 @@ public class ExchangeService {
                 exchange.getStatus()
         );
     }
+
+    //고객 삭제
+    @Transactional
+    public void deleteExchangesByUserId(Long userId) {
+        userRepository.findById(userId).orElseThrow(()-> new IllegalArgumentException("유저를 찾을 수 없습니다."));
+        exchangRepository.deleteByUserId(userId);
+    }
 }

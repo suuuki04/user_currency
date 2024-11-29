@@ -37,4 +37,10 @@ public class ExchangeController {
         ExchangeResponseDto responseDto = exchangeService.cancelExchange(id);
         return new ResponseEntity<>(responseDto, HttpStatus.OK);
     }
+
+    @DeleteMapping("/users/{userId}")
+    public ResponseEntity<Void> deleteExchangesByUserId(@PathVariable Long userId) {
+        exchangeService.deleteExchangesByUserId(userId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
